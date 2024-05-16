@@ -52,6 +52,6 @@ class DB:
         self.session.commit()
 
     def add_deliveries(self, delivery_data: list[tuple]):
-        deliveries = [Order(project_id=data[0], customer_id=data[1], total_amount=data[2]) for data in delivery_data]
+        deliveries = [Delivery(project_id=data[0], customer_id=data[1], total_amount=data[2]) for data in delivery_data]
         self.session.add_all(deliveries)
         self.session.commit()
